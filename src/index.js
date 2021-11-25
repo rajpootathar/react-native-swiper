@@ -772,13 +772,13 @@ export default class extends Component {
     return (
       <ScrollView
         ref={this.refScrollView}
+        onScrollBeginDrag={this.onScrollBegin}
+        onMomentumScrollEnd={this.onScrollEnd}
+        onScrollEndDrag={this.onScrollEndDrag}
         {...this.props}
         {...this.scrollViewPropOverrides()}
         contentContainerStyle={[styles.wrapperIOS, this.props.style]}
         contentOffset={this.state.offset}
-        onScrollBeginDrag={this.onScrollBegin}
-        onMomentumScrollEnd={this.onScrollEnd}
-        onScrollEndDrag={this.onScrollEndDrag}
         style={this.props.scrollViewStyle}
       >
         {pages}
